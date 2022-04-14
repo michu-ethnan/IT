@@ -26,3 +26,4 @@ Automatic Testing
 
 ## Report Generated
 * inside directory ./target/site/serenity/index.html
+* 
