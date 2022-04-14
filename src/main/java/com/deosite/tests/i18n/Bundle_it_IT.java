@@ -53,7 +53,7 @@ public class Bundle_it_IT extends ListResourceBundle {
                 // Messages
                 {"success order message", "Dziękujemy, Twoje zamówienie zostało złożone!"},
                 {"additional success info", "Zamówienie jest kompletowane, o wysyłce poinformujemy drogą mailową."},
-                {"the cart is empty message", "Nessun prodotto nel carrello"},
+                {"the cart is empty message", "Nessun prodotto nel carrelloNessun prodotto nel carrello"},
                 {"login button text", "Accesso"},
                 // Objects
                 {"person", new Personal(

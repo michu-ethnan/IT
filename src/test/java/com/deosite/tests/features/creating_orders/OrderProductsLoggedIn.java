@@ -26,6 +26,7 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX;
+import static com.deosite.tests.pages.HomePage.DAJAR_LOGO;
 import static com.deosite.tests.pages.LoginPage.*;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON_AFTER_LOGIN;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
@@ -107,10 +108,12 @@ public class OrderProductsLoggedIn {
     }
 
     @And("he changes shipping address")
-    public void actor_changes_shipping_address() {
+    public void actor_changes_shipping_address() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
-                ChangeShippingAddress.changeShippingAddress()
+                ChangeShippingAddress.changeShippingAddress(),
+                MoveMouse.to(DAJAR_LOGO)
         );
+
 
     }
 
