@@ -87,16 +87,17 @@ public class OrderProductsLoggedIn {
                 AddProduct.toCart(),
                 Click.on(MINI_CART_BUTTON_AFTER_LOGIN),
                 Open.checkoutPage(),
-                WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds()
+                WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds(),
+                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isPresent()).forNoMoreThan(50).seconds()
         );
     }
 
     @And("he changes billing address")
     public void actor_changes_billing_address() {
         theActorInTheSpotlight().attemptsTo(
-                ChangeBillingAddress.changeBillingAddress()
+                Click.on(CheckoutPage.BILLING_ADDRESS_SELECT),
+                SelectBillingAddress.byBillingAddress(1));
 
-        );
     }
 
     @And("he clicks the same shipping address checkbox")
@@ -110,8 +111,10 @@ public class OrderProductsLoggedIn {
     @And("he changes shipping address")
     public void actor_changes_shipping_address() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
-                ChangeShippingAddress.changeShippingAddress(),
-                MoveMouse.to(DAJAR_LOGO)
+                Click.on(CheckoutPage.SHIPPING_ADDRESS_CHECKBOX),
+                Click.on(CheckoutPage.SHIPPING_ADDRESS_SELECT),
+                SelectShippingAddress.byShippingAddress(1),
+                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isClickable()).forNoMoreThan(50).seconds()
         );
 
 
