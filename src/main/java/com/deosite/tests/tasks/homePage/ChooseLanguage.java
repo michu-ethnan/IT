@@ -28,7 +28,7 @@ SelectLanguage.byIndexNumber(4)
 
 
         }
-        if (chooseLanguage.contains("Spanish")){
+        if (chooseLanguage.contains("Spain")){
             actor.attemptsTo(SelectLanguage.byIndexNumber(2));
 
 
@@ -40,7 +40,7 @@ SelectLanguage.byIndexNumber(3)
 
 
         }
-        if (chooseLanguage.contains("CZech")){
+        if (chooseLanguage.contains("Czech")){
             actor.attemptsTo(
 SelectLanguage.byIndexNumber(0)
             );
